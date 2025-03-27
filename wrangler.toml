@@ -2,19 +2,9 @@ name = "ogen"
 main = "src/index.ts"
 compatibility_date = "2023-10-30"
 
-[vars]
-# 環境変数をここに設定できます
-
-# [[routes]]パターンを削除
-# pattern = "*/*"
-# zone_name = ""
-
 [site]
 bucket = "./public"
 
 [dev]
 port = 8787
-host = "localhost" # 明示的にホストを設定
-
-[env.production]
-# 本番環境用の設定を追加できます 
+host = "localhost"
