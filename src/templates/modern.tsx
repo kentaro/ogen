@@ -9,82 +9,93 @@ export const ModernTemplate = ({ title, username, iconUrl }: OGImageParams) => {
         height: '100%',
         width: '100%',
         display: 'flex',
-        flexDirection: 'column',
-        backgroundColor: '#1a1a1a',
-        color: 'white',
-        padding: '60px',
-        fontFamily: '"Noto Sans JP"'
+        background: 'linear-gradient(to left, #EEF0FF, #FFF0F8)',
+        padding: '36px',
+        boxSizing: 'border-box'
       }}
     >
-      {/* グラデーションの背景要素 */}
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        height: '200px',
-        background: 'linear-gradient(135deg, #00C6FF 0%, #0072FF 100%)',
-        opacity: 0.1,
-        display: 'flex'
-      }} />
-
-      {/* メインコンテンツ */}
-      <div style={{
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        position: 'relative',
-        zIndex: 1
-      }}>
-        {/* タイトルエリア */}
-        <div style={{
-          fontSize: '72px',
-          fontWeight: 'bold',
-          lineHeight: 1.4,
-          letterSpacing: '-0.02em',
-          background: 'linear-gradient(135deg, #00C6FF 0%, #0072FF 100%)',
-          backgroundClip: 'text',
-          color: 'transparent',
-          display: 'flex'
-        }}>
-          {title}
-        </div>
-
-        {/* ユーザー情報エリア */}
-        <div style={{
+      <div
+        style={{
+          flex: 1,
           display: 'flex',
-          alignItems: 'center',
-          gap: '12px',
-          marginTop: '40px'
+          flexDirection: 'column',
+          backgroundColor: 'white',
+          color: '#333',
+          padding: '60px',
+          fontFamily: '"Noto Sans JP", sans-serif',
+          position: 'relative',
+          borderRadius: '16px',
+          boxShadow: '0px 12px 40px rgba(0, 0, 0, 0.15)'
+        }}
+      >
+        {/* メインコンテンツ */}
+        <div style={{
+          flex: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          position: 'relative',
+          zIndex: 1
         }}>
-          {iconUrl && (
-            <img
-              src={iconUrl}
-              width="64"
-              height="64"
-              alt={`${username}'s avatar`}
-              style={{ borderRadius: '50%', border: '2px solid #0072FF' }}
-            />
-          )}
-          <div style={{
-            fontSize: '32px',
-            color: '#e0e0e0',
-            display: 'flex'
-          }}>
-            by {username}
+          {/* タイトルエリア */}
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div style={{
+              fontSize: '64px',
+              fontWeight: 'bold',
+              lineHeight: 1.3,
+              letterSpacing: '-0.02em',
+              color: '#333'
+            }}>
+              {title}
+            </div>
           </div>
-        </div>
 
-        {/* フッターエリア */}
-        <div style={{
-          marginTop: '80px',
-          fontSize: '18px',
-          color: '#888',
-          display: 'flex',
-          justifyContent: 'flex-end'
-        }}>
-          Powered by OGen
+          {/* ユーザー情報と Powered by */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
+            marginTop: '60px'
+          }}>
+            {/* ユーザー情報 */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '16px'
+            }}>
+              {iconUrl && (
+                <img
+                  src={iconUrl}
+                  width="80"
+                  height="80"
+                  alt={`${username}'s avatar`}
+                  style={{ borderRadius: '50%', border: '3px solid #3177EE' }}
+                />
+              )}
+              <div style={{
+                fontSize: '36px',
+                color: '#333',
+                fontWeight: 'bold'
+              }}>
+                {username}
+              </div>
+            </div>
+
+            {/* Powered by */}
+            <div style={{
+              fontSize: '24px',
+              color: '#666',
+              display: 'flex',
+              alignItems: 'center'
+            }}>
+              Powered by <a href="https://github.com/kentaro/ogen" style={{
+                marginLeft: '10px',
+                color: '#3177EE',
+                fontWeight: 'bold',
+                textDecoration: 'none'
+              }}>kentaro/ogen</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
