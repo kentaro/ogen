@@ -80,7 +80,8 @@ app.get('/og', async (c) => {
     const result = ogImageParamsSchema.safeParse({
       title: query.title,
       username: query.username,
-      template: query.template,
+      gradientFrom: query.gradientFrom,
+      gradientTo: query.gradientTo,
       iconUrl: query.iconUrl
     })
     
@@ -94,7 +95,7 @@ app.get('/og', async (c) => {
     const params = result.data
     
     // テンプレートを取得
-    const template = getTemplate(params.template)
+    const template = getTemplate()
     
     // フォントをロード
     const fonts = await loadFonts()

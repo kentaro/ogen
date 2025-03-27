@@ -2,14 +2,14 @@
 import { jsx } from 'hono/jsx'
 import type { OGImageParams } from '../types'
 
-export const ModernTemplate = ({ title, username, iconUrl }: OGImageParams) => {
+export const ModernTemplate = ({ title, username, iconUrl, gradientFrom, gradientTo }: OGImageParams) => {
   return (
     <div
       style={{
         height: '100%',
         width: '100%',
         display: 'flex',
-        background: 'linear-gradient(to left, #EEF0FF, #FFF0F8)',
+        background: `linear-gradient(to left, ${gradientFrom}, ${gradientTo})`,
         padding: '36px',
         boxSizing: 'border-box'
       }}
