@@ -1,0 +1,41 @@
+# 依存関係
+node_modules/
+.npm
+package-lock.json
+
+# ビルド出力
+dist/
+build/
+.wrangler/
+.cloudflare/
+
+# ログ
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 開発環境
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# エディタ設定
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS関連
+.DS_Store
+Thumbs.db
+
+# テスト関連
+coverage/
+.nyc_output/
+
+# キャッシュ
+.cache/ 
