@@ -69,17 +69,17 @@ OG画像生成には以下のパラメーターを指定できます:
 
 #### デフォルトのピンク系グラデーション：
 ```
-https://ogen.kentarokuribayashi.com/og?title=素晴らしいコンテンツ&username=example_user
+https://ogen.kentarok.workers.dev/og?title=素晴らしいコンテンツ&username=example_user
 ```
 
 #### 青系グラデーション：
 ```
-https://ogen.kentarokuribayashi.com/og?title=素晴らしいコンテンツ&username=example_user&gradientFrom=%233177EE&gradientTo=%235B8DEF
+https://ogen.kentarok.workers.dev/og?title=素晴らしいコンテンツ&username=example_user&gradientFrom=%233177EE&gradientTo=%235B8DEF
 ```
 
 #### 水色系グラデーション：
 ```
-https://ogen.kentarokuribayashi.com/og?title=素晴らしいコンテンツ&username=example_user&gradientFrom=%2300C6FF&gradientTo=%230072FF
+https://ogen.kentarok.workers.dev/og?title=素晴らしいコンテンツ&username=example_user&gradientFrom=%2300C6FF&gradientTo=%230072FF
 ```
 
 色コードは URL エンコードする必要があります：
