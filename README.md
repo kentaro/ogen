@@ -4,7 +4,7 @@ CloudflareワーカーでOGP画像を動的に生成するサービスです。
 
 ## 特徴
 
-- ⚡️ 高速: Honoフレームワーク（v4.4.1）による高速なレスポンス
+- ⚡️ 高速: Hono＋Cloudflare Workersによる高速なレスポンス
 - 🎨 カスタマイズ可能: グラデーション色を変更できるモダンなデザイン
 - 🧪 テスト完備: 単体テスト・統合テストによる安定性（カバレッジ100%）
 
@@ -77,15 +77,15 @@ OG画像生成には以下のパラメーターを指定できます:
 
 #### アイコン付きリクエスト（実際の利用例）：
 
-![](https://ogen.kentarok.workers.dev/og?title=og:image%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8BWeb%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92Hono+Cloudflare%20Workers%E3%81%A7%E4%BD%9C%E3%81%A3%E3%81%9F%EF%BC%81%20&username=%E6%A0%97%E6%9E%97%E5%81%A5%E5%A4%AA%E9%83%8E&iconUrl=https://pbs.twimg.com/profile_images/1893532407988367361/5EfifO80_400x400.jpg)
+![](https://ogen.kentarok.workers.dev/og?title=og:image%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8BWeb%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92Hono%EF%BC%8BCloudflare%20Workers%E3%81%A7%E4%BD%9C%E3%81%A3%E3%81%9F%EF%BC%81%20&username=%E6%A0%97%E6%9E%97%E5%81%A5%E5%A4%AA%E9%83%8E&iconUrl=https://pbs.twimg.com/profile_images/1893532407988367361/5EfifO80_400x400.jpg)
 
 #### オレンジ系グラデーション：
 
-![](https://ogen.kentarok.workers.dev/og?title=og:image%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8BWeb%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92Hono+Cloudflare%20Workers%E3%81%A7%E4%BD%9C%E3%81%A3%E3%81%9F%EF%BC%81%20&username=%E6%A0%97%E6%9E%97%E5%81%A5%E5%A4%AA%E9%83%8E&iconUrl=https://pbs.twimg.com/profile_images/1893532407988367361/5EfifO80_400x400.jpg&gradientFrom=%23FF8C00&gradientTo=%23FFA500)
+![](https://ogen.kentarok.workers.dev/og?title=og:image%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8BWeb%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92Hono%EF%BC%8BCloudflare%20Workers%E3%81%A7%E4%BD%9C%E3%81%A3%E3%81%9F%EF%BC%81%20&username=%E6%A0%97%E6%9E%97%E5%81%A5%E5%A4%AA%E9%83%8E&iconUrl=https://pbs.twimg.com/profile_images/1893532407988367361/5EfifO80_400x400.jpg&gradientFrom=%23FF8C00&gradientTo=%23FFA500)
 
 #### 水色系グラデーション：
 
-![](https://ogen.kentarok.workers.dev/og?title=og:image%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8BWeb%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92Hono+Cloudflare%20Workers%E3%81%A7%E4%BD%9C%E3%81%A3%E3%81%9F%EF%BC%81%20&username=%E6%A0%97%E6%9E%97%E5%81%A5%E5%A4%AA%E9%83%8E&iconUrl=https://pbs.twimg.com/profile_images/1893532407988367361/5EfifO80_400x400.jpg&gradientFrom=%2300C6FF&gradientTo=%230072FF)
+![](https://ogen.kentarok.workers.dev/og?title=og:image%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8BWeb%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92Hono%EF%BC%8BCloudflare%20Workers%E3%81%A7%E4%BD%9C%E3%81%A3%E3%81%9F%EF%BC%81%20&username=%E6%A0%97%E6%9E%97%E5%81%A5%E5%A4%AA%E9%83%8E&iconUrl=https://pbs.twimg.com/profile_images/1893532407988367361/5EfifO80_400x400.jpg&gradientFrom=%2300C6FF&gradientTo=%230072FF)
 
 色コードは URL エンコードする必要があります：
 
