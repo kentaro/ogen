@@ -1,6 +1,5 @@
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
-import { serveStatic } from 'hono/cloudflare-workers'
 import satori from 'satori'
 import { ogImageParamsSchema } from './types'
 import { getTemplate } from './templates/registry'
@@ -26,12 +25,6 @@ const app = new Hono()
 app.use(cors({
   origin: '*',
   allowMethods: ['GET', 'OPTIONS'],
-}))
-
-// 静的ファイルの提供
-app.get('/static/*', serveStatic({ 
-  root: './',
-  manifest: {} // 空のマニフェストを追加
 }))
 
 // ルートへのアクセスをリダイレクト
