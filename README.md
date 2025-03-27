@@ -75,24 +75,21 @@ OG画像生成には以下のパラメーターを指定できます:
 
 ### リクエスト例
 
-#### デフォルトのピンク系グラデーション：
-```
-https://ogen.kentarok.workers.dev/og?title=素晴らしいコンテンツ&username=example_user
-```
+#### アイコン付きリクエスト（実際の利用例）：
 
-#### 青系グラデーション：
-```
-https://ogen.kentarok.workers.dev/og?title=素晴らしいコンテンツ&username=example_user&gradientFrom=%233177EE&gradientTo=%235B8DEF
-```
+![](https://ogen.kentarok.workers.dev/og?title=og:image%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8BWeb%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92Hono+Cloudflare%20Workers%E3%81%A7%E4%BD%9C%E3%81%A3%E3%81%9F%EF%BC%81%20&username=%E6%A0%97%E6%9E%97%E5%81%A5%E5%A4%AA%E9%83%8E&iconUrl=https://pbs.twimg.com/profile_images/1893532407988367361/5EfifO80_400x400.jpg)
+
+#### オレンジ系グラデーション：
+
+![](https://ogen.kentarok.workers.dev/og?title=og:image%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8BWeb%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92Hono+Cloudflare%20Workers%E3%81%A7%E4%BD%9C%E3%81%A3%E3%81%9F%EF%BC%81%20&username=%E6%A0%97%E6%9E%97%E5%81%A5%E5%A4%AA%E9%83%8E&iconUrl=https://pbs.twimg.com/profile_images/1893532407988367361/5EfifO80_400x400.jpg&gradientFrom=%23FF8C00&gradientTo=%23FFA500)
 
 #### 水色系グラデーション：
-```
-https://ogen.kentarok.workers.dev/og?title=素晴らしいコンテンツ&username=example_user&gradientFrom=%2300C6FF&gradientTo=%230072FF
-```
+
+![](https://ogen.kentarok.workers.dev/og?title=og:image%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8BWeb%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92Hono+Cloudflare%20Workers%E3%81%A7%E4%BD%9C%E3%81%A3%E3%81%9F%EF%BC%81%20&username=%E6%A0%97%E6%9E%97%E5%81%A5%E5%A4%AA%E9%83%8E&iconUrl=https://pbs.twimg.com/profile_images/1893532407988367361/5EfifO80_400x400.jpg&gradientFrom=%2300C6FF&gradientTo=%230072FF)
 
 色コードは URL エンコードする必要があります：
+
 - `%233177EE` は `#3177EE`
-- `%235B8DEF` は `#5B8DEF`
 
 ## デザイン
 
