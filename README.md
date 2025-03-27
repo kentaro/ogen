@@ -4,9 +4,9 @@ CloudflareワーカーでOGP画像を動的に生成するサービスです。
 
 ## 特徴
 
-- ⚡️ 高速: Honoフレームワークによる高速なレスポンス
+- ⚡️ 高速: Honoフレームワーク（v4.4.1）による高速なレスポンス
 - 🎨 カスタマイズ可能: グラデーション色を変更できるモダンなデザイン
-- 🧪 テスト完備: 単体テスト・統合テストによる安定性
+- 🧪 テスト完備: 単体テスト・統合テストによる安定性（カバレッジ100%）
 
 ## セットアップ
 
@@ -44,6 +44,22 @@ npm test
 ```bash
 npm run test:coverage
 ```
+
+## テスト構成
+
+テストは以下のディレクトリ構造で管理されています：
+
+```
+tests/
+├── integration/   # 統合テスト
+│   └── index.test.ts  # アプリケーション全体の統合テスト
+└── unit/         # ユニットテスト
+    ├── handler.test.ts    # ハンドラー関数のテスト
+    ├── og-image.test.tsx  # OGImageコンポーネントのテスト
+    └── types.test.ts      # 型定義とバリデーションのテスト
+```
+
+すべてのソースコードに対して100%のテストカバレッジを達成しています。
 
 ## 使い方
 
@@ -100,10 +116,10 @@ npm run deploy
 
 ## 技術スタック
 
-- [Hono](https://hono.dev/): 軽量で高速なWebフレームワーク
-- [Satori](https://github.com/vercel/satori): JavaScriptからSVGを生成
-- [Zod](https://zod.dev/): TypeScriptファーストなバリデーション
-- [Vitest](https://vitest.dev/): 次世代のテストフレームワーク
+- [Hono](https://hono.dev/) v4.4.1: 軽量で高速なWebフレームワーク
+- [Satori](https://github.com/vercel/satori) v0.10.13: JavaScriptからSVGを生成
+- [Zod](https://zod.dev/) v3.22.4: TypeScriptファーストなバリデーション
+- [Vitest](https://vitest.dev/) v1.4.0: 次世代のテストフレームワーク
 
 ## ライセンス
 
