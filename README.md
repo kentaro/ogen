@@ -5,7 +5,7 @@ CloudflareワーカーでOGP画像を動的に生成するサービスです。
 ## 特徴
 
 - ⚡️ 高速: Honoフレームワークによる高速なレスポンス
-- 🎨 複数テンプレート: 用途に合わせて選べる画像テンプレート
+- 🎨 カスタマイズ可能: グラデーション色を変更できるモダンなデザイン
 - 🧪 テスト完備: 単体テスト・統合テストによる安定性
 
 ## セットアップ
@@ -20,7 +20,7 @@ CloudflareワーカーでOGP画像を動的に生成するサービスです。
 
 ```bash
 # リポジトリをクローン
-git clone https://github.com/yourusername/ogen.git
+git clone https://github.com/kentaro/ogen.git
 cd ogen
 
 # 依存パッケージをインストール
@@ -61,24 +61,39 @@ OG画像生成には以下のパラメーターを指定できます:
 
 - `title`: 画像に表示するタイトル（必須）
 - `username`: ユーザー名（必須）
-- `template`: 使用するテンプレート（`modern` または `simple`、デフォルトは `modern`）
+- `gradientFrom`: グラデーションの開始色（デフォルトは `#EEF0FF`）
+- `gradientTo`: グラデーションの終了色（デフォルトは `#FFF0F8`）
 - `iconUrl`: アイコン画像のURL（オプション）
 
 ### リクエスト例
 
+#### デフォルトのピンク系グラデーション：
 ```
-https://your-worker.yourdomain.workers.dev/og?title=素晴らしいコンテンツ&username=example_user&template=modern&iconUrl=https://example.com/icon.png
+https://ogen.kentarokuribayashi.com/og?title=素晴らしいコンテンツ&username=example_user
 ```
 
-### テンプレート
+#### 青系グラデーション：
+```
+https://ogen.kentarokuribayashi.com/og?title=素晴らしいコンテンツ&username=example_user&gradientFrom=%233177EE&gradientTo=%235B8DEF
+```
 
-#### Modernテンプレート
+#### 水色系グラデーション：
+```
+https://ogen.kentarokuribayashi.com/og?title=素晴らしいコンテンツ&username=example_user&gradientFrom=%2300C6FF&gradientTo=%230072FF
+```
 
-モダンでスタイリッシュなデザイン。主要コンテンツにフォーカスしています。
+色コードは URL エンコードする必要があります：
+- `%233177EE` は `#3177EE`
+- `%235B8DEF` は `#5B8DEF`
 
-#### Simpleテンプレート
+## デザイン
 
-シンプルなデザイン。最小限の要素でクリーンな見た目を提供します。
+OGP画像のデザインは白い角丸のコンテンツエリアと、カスタマイズ可能なグラデーションの枠で構成されています。
+
+- モダンでスタイリッシュなデザイン
+- 角丸とシャドウで立体感を表現
+- タイトルとユーザー名を大きく表示
+- アイコン画像（指定した場合）をユーザー名の横に表示
 
 ## デプロイ
 
