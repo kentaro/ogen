@@ -1,7 +1,0 @@
-name = "ogen"
-main = "src/index.ts"
-compatibility_date = "2023-10-30"
-
-[dev]
-port = 8787
-host = "localhost"

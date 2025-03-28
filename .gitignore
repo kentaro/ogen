@@ -7,6 +7,8 @@ dist/
 build/
 .wrangler/
 .cloudflare/
+.next/
+out/
 
 # ログ
 logs
@@ -37,4 +39,7 @@ coverage/
 .nyc_output/
 
 # キャッシュ
-.cache/ 
+.cache/
+
+# Vercel
+.vercel 

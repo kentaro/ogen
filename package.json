@@ -1,23 +1,26 @@
 {
     "name": "ogen",
     "version": "0.1.0",
-    "description": "OGP画像を動的に生成するCloudflareワーカーサービス",
-    "main": "src/index.ts",
+    "description": "OGP画像を動的に生成するVercelサービス",
+    "main": "api/index.ts",
     "scripts": {
-        "dev": "wrangler dev",
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
         "test": "vitest run",
         "test:coverage": "vitest run --coverage",
-        "deploy": "wrangler deploy",
-        "lint": "eslint --ext .ts,.tsx src",
+        "lint": "eslint --ext .ts,.tsx api",
         "typecheck": "tsc --noEmit"
     },
     "dependencies": {
-        "hono": "^4.4.1",
-        "satori": "^0.10.13",
+        "@vercel/og": "^0.6.2",
+        "next": "^14.1.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "sharp": "^0.33.2",
         "zod": "^3.22.4"
     },
     "devDependencies": {
-        "@cloudflare/workers-types": "^4.20240326.0",
         "@types/node": "^20.11.30",
         "@types/react": "^18.2.67",
         "@typescript-eslint/eslint-plugin": "^7.3.1",
@@ -25,8 +28,7 @@
         "@vitest/coverage-v8": "^1.4.0",
         "eslint": "^8.57.0",
         "typescript": "^5.4.2",
-        "vitest": "^1.4.0",
-        "wrangler": "^3.36.0"
+        "vitest": "^1.4.0"
     },
     "engines": {
         "node": ">=18"
