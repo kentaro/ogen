@@ -105,4 +105,64 @@ describe('OGImage Component', () => {
         expect(style).toContain('#EEF0FF');
         expect(style).toContain('#FFF0F8');
     });
+
+    // タイトル処理のテスト
+    describe('Title formatting', () => {
+        it('should leave short titles unchanged', () => {
+            const { container } = render(
+                <OGImage
+                    title="短いタイトル"
+                    username="testuser"
+                    gradientFrom="#EEF0FF"
+                    gradientTo="#FFF0F8"
+                    iconUrl={null}
+                />
+            );
+
+            expect(container.textContent).toContain('短いタイトル');
+        });
+
+        it('should not truncate titles with exactly 48 characters', () => {
+            // ちょうど48文字のタイトル
+            const title48chars = "123456789012345678901234567890123456789012345678";
+            const { container } = render(
+                <OGImage
+                    title={title48chars}
+                    username="testuser"
+                    gradientFrom="#EEF0FF"
+                    gradientTo="#FFF0F8"
+                    iconUrl={null}
+                />
+            );
+
+            expect(container.textContent).toContain(title48chars);
+
+            // 省略記号が含まれていないことを確認
+            const textContent = container.textContent || '';
+            expect(textContent).not.toContain('...');
+        });
+
+        it('should truncate titles longer than 48 characters with ellipsis', () => {
+            // 49文字のタイトル (48文字を超える)
+            const title49chars = "1234567890123456789012345678901234567890123456789";
+            const { container } = render(
+                <OGImage
+                    title={title49chars}
+                    username="testuser"
+                    gradientFrom="#EEF0FF"
+                    gradientTo="#FFF0F8"
+                    iconUrl={null}
+                />
+            );
+
+            // 省略記号(...)が含まれていることを確認
+            expect(container.textContent).toContain('...');
+
+            // 元のタイトルの最初の47文字が含まれていることを確認
+            expect(container.textContent).toContain(title49chars.slice(0, 47));
+
+            // 元のタイトルの48文字目が含まれていないことを確認
+            expect(container.textContent).not.toContain(title49chars.slice(0, 48));
+        });
+    });
 }); 

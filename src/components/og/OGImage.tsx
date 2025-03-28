@@ -23,6 +23,21 @@ function isValidColor(color: string): boolean {
 }
 
 /**
+ * タイトルテキストを処理し、最大48文字に制限する
+ * 長すぎる場合は47文字にして「...」で省略する
+ */
+function formatTitle(title: string): string {
+    const MAX_CHARS = 48;
+
+    // 48文字を超える場合は47文字で切って「...」を付ける
+    if (title.length > MAX_CHARS) {
+        return title.slice(0, MAX_CHARS - 1) + '...';
+    }
+
+    return title;
+}
+
+/**
  * OGP画像用のReactコンポーネント
  * 
  * このコンポーネントは@vercel/ogのImageResponseによってレンダリングされ、
@@ -40,6 +55,7 @@ export function OGImage({
 }: OGImageParams): React.ReactElement {
     // 文字列の安全性を確保（XSS対策）
     const safeTitle = safeAttr(title);
+    const formattedTitle = formatTitle(safeTitle);
     const safeUsername = safeAttr(username);
     const safeGradientFrom = isValidColor(gradientFrom)
         ? gradientFrom
@@ -65,7 +81,7 @@ export function OGImage({
                     {/* タイトルエリア */}
                     <div style={{ display: 'flex' }}>
                         <div style={styles.title}>
-                            {safeTitle}
+                            {formattedTitle}
                         </div>
                     </div>
 
