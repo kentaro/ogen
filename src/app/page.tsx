@@ -1,15 +1,8 @@
-import { NextPage } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
 
-const Home: NextPage = () => {
+export default function Home() {
     return (
         <div style={{ fontFamily: 'sans-serif', maxWidth: '800px', margin: '0 auto', padding: '2rem' }}>
-            <Head>
-                <title>OGen - OG画像ジェネレーター</title>
-                <meta name="description" content="OGP画像を動的に生成するVercelサービス" />
-            </Head>
-
             <main>
                 <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>OGen - OG画像ジェネレーター</h1>
                 <p style={{ fontSize: '1.2rem', lineHeight: 1.6, marginBottom: '2rem' }}>
@@ -42,7 +35,7 @@ const Home: NextPage = () => {
                 <h3 style={{ fontSize: '1.4rem', marginTop: '2rem', marginBottom: '1rem' }}>サンプル</h3>
                 <div style={{ marginBottom: '2rem' }}>
                     <Link
-                        href="/og?title=OGenでOGP画像を簡単生成&username=サンプルユーザー"
+                        href="/api/og?title=OGenでOGP画像を簡単生成&username=サンプルユーザー"
                         target="_blank"
                         style={{ color: '#3177EE', textDecoration: 'underline' }}
                     >
@@ -66,6 +59,4 @@ const Home: NextPage = () => {
             </footer>
         </div>
     );
-};
-
-export default Home; 
+} 

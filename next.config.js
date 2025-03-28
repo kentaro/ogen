@@ -3,7 +3,10 @@ const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
     experimental: {
-        serverComponentsExternalPackages: ['@vercel/og']
+        serverComponentsExternalPackages: ['@vercel/og'],
+        serverActions: {
+            bodySizeLimit: '10mb'
+        }
     }
 };
 
